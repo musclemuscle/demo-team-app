@@ -7,12 +7,12 @@ import { db } from "src/utils/firebase";
 const Home: NextPage = () => {
 	const [text, setText] = useState("");
 
-	const setLatestText = (e: ChangeEvent<HTMLInputElement>) => {
+	const setLatestText = (e: ChangeEvent<HTMLInputElement>): void => {
 		const value = e.target.value;
 		setText(value);
 	};
 
-	const submitData = async () => {
+	const submitData = async (): Promise<void> => {
 		try {
 			const docRef = await addDoc(collection(db, "users"), {
 				first: "Ada",

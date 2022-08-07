@@ -8,6 +8,7 @@
 		"build": "next build",
 		"start": "next start",
 		"format": "prettier --write ./src",
+		"lint": "eslint ./src",
 		"ts-test": "tsc --project ./tsconfig.json",
 		"export": "next export"
 	},

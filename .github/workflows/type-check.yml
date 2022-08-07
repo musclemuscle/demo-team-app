@@ -31,5 +31,8 @@ jobs:
         if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
         run: yarn install --frozen-lockfile
 
+      - name: eslint Test
+        run: yarn lint
+
       - name: TypeScript Test
         run: yarn ts-test
