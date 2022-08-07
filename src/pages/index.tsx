@@ -7,7 +7,7 @@ import { db } from "src/utils/firebase";
 const Home: NextPage = () => {
 	const [text, setText] = useState("");
 
-	const setLatestText = (e: ChangeEvent<HTMLInputElement>) => {
+	const setLatestText = (e: ChangeEvent<HTMLInputElement>): void => {
 		const value = e.target.value;
 		setText(value);
 	};
