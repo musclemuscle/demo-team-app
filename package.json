@@ -8,7 +8,8 @@
 		"build": "next build",
 		"start": "next start",
 		"format": "prettier --write ./src",
-		"ts-test": "tsc --project ./tsconfig.json"
+		"ts-test": "tsc --project ./tsconfig.json",
+		"export": "next export"
 	},
 	"dependencies": {
 		"firebase": "^9.9.2",
