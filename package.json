@@ -11,6 +11,7 @@
 		"ts-test": "tsc --project ./tsconfig.json"
 	},
 	"dependencies": {
+		"firebase": "^9.9.2",
 		"next": "12.2.4",
 		"prettier": "^2.7.1",
 		"react": "18.2.0",
