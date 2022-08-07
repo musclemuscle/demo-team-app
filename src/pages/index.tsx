@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 		setText(value);
 	};
 
-	const submitData = async () => {
+	const submitData = async (): Promise<void> => {
 		try {
 			const docRef = await addDoc(collection(db, "users"), {
 				first: "Ada",
