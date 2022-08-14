@@ -1,4 +1,4 @@
-name: firebase deploy
+name: Deploy to Live Channel
 
 on:
   push:
@@ -6,33 +6,16 @@ on:
       - main
 
 jobs:
-  node-test:
-    runs-on: ${{ matrix.os }}
-
-    strategy:
-      matrix:
-        os: ["ubuntu-latest"]
-        node: [16.x]
-
+  deploy_production:
+    runs-on: ubuntu-latest
     steps:
-      - name: Setup NodeJs ${{ matrix.node }}
-        uses: actions/setup-node@v2
+      - uses: actions/checkout@v2
+
+      - run: yarn install && yarn build
+
+      - uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          node-version: ${{ matrix.node }}
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - name: Cache node_modules
-        id: node_modules_cache_id
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ matrix.os }}-node-v${{ matrix.node }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-
-      - name: Yarn Install
-        if: steps.node_modules_cache_id.outputs.cache-hit != 'true'
-        run: yarn install --frozen-lockfile
-
-      - name: firebase deploy
-        run: make deploy
+          repoToken: "${{ secrets.GITHUB_TOKEN }}"
+          firebaseServiceAccount: "${{ secrets.FIREBASE_SERVICE_ACCOUNT }}"
+          projectId: "${{ secrets.FIREBASE_PROJECT_ID }}"
+          channelId: live
