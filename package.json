@@ -1,6 +1,7 @@
 {
 	"name": "demo-team-app",
 	"version": "0.1.0",
+	"homepage": ".",
 	"private": true,
 	"scripts": {
 		"preinstall": "npx -y only-allow yarn",
