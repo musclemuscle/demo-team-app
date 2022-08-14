@@ -2,7 +2,7 @@ name: Deploy to Live Channel
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
 
 jobs:

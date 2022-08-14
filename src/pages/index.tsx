@@ -44,7 +44,7 @@ const Home: NextPage = () => {
 			<p>recoilのテスト</p>
 			<p>{user.age}</p>
 			<button onClick={incrementalUserAge}>+1</button>
-			<p>deploy test</p>
+			<p>deploy test test</p>
 		</div>
 	);
 };
