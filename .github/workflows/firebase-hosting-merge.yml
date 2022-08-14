@@ -1,4 +1,4 @@
-name: Deploy to firebase
+name: Deploy Firebase Hosting
 
 on:
   push:
@@ -6,20 +6,33 @@ on:
       - main
 
 jobs:
-  deploy:
+  build-and-deploy:
+    name: Firebase Deploy
     runs-on: ubuntu-latest
     strategy:
       matrix:
         node-version: [16.x]
+
     steps:
       - uses: actions/checkout@v2
-      - name: yarn install
-        uses: borales/actions-yarn@v2.0.0
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          cmd: install
-      - name: yarn run deploy:token
-        uses: borales/actions-yarn@v2.0.0
+          node-version: ${{ matrix.node-version }}
+
+      - name: install package
+        run: yarn install
+
+      - name: build Next.js
+        run: yarn build
+
+      - name: export Next.js
+        run: yarn export
+
+      - name: deploy to Firebase Hosting
+        uses: w9jds/firebase-action@master
         with:
-          cmd: deploy:token
+          args: deploy --only hosting
         env:
           FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
