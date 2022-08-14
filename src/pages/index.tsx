@@ -1,11 +1,18 @@
 import { addDoc, collection } from "firebase/firestore";
 import type { NextPage } from "next";
+import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { useRecoilState } from "recoil";
 import styles from "src/pages/Home.module.css";
 import { userState } from "src/stores/userState";
 import { UserStateProps } from "src/types/stores/userState";
 import { db } from "src/utils/firebase";
+
+/**
+ * @説明  : トップページ
+ *
+ * ここでは、投稿の羅列を行う。（後回し）
+ */
 
 const Home: NextPage = () => {
 	const [user, setUser] = useRecoilState<UserStateProps>(userState);
@@ -45,6 +52,15 @@ const Home: NextPage = () => {
 			<p>{user.age}</p>
 			<button onClick={incrementalUserAge}>+1</button>
 			<p>deploy test test test test</p>
+			<Link href={"/login"}>
+				<a>Loginページへ</a>
+			</Link>
+			<Link href={"/profile"}>
+				<a>Profileページへ</a>
+			</Link>
+			<Link href={"/post"}>
+				<a>Postページへ</a>
+			</Link>
 		</div>
 	);
 };
