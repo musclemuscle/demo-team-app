@@ -6,7 +6,6 @@ import styles from "src/pages/Home.module.css";
 import { userState } from "src/stores/userState";
 import { UserStateProps } from "src/types/stores/userState";
 import { db } from "src/utils/firebase";
-import { text } from "stream/consumers";
 
 const Home: NextPage = () => {
 	const [user, setUser] = useRecoilState<UserStateProps>(userState);
@@ -22,6 +21,7 @@ const Home: NextPage = () => {
 			const docRef = await addDoc(collection(db, "users"), {
 				first: "Ada",
 				last: "Lovelace",
+				age: 23,
 				born: 1815,
 			});
 			console.log("Document written with ID: ", docRef.id);
