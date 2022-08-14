@@ -2,7 +2,7 @@ name: type check
 
 on:
   push:
-    branches:
+    branches-ignore:
       - main
 
 jobs:
