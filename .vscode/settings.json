@@ -10,7 +10,12 @@
 		"source.addMissingImports": true, // importの自動追加
 		"source.fixAll.eslint": true
 	},
+	// tailwindの設定であるといい設定
+	"editor.quickSuggestions": {
+		"strings": true
+	},
 	"[typescriptreact]": {
+		"editor.formatOnSave": true,
 		"editor.defaultFormatter": "esbenp.prettier-vscode"
 	},
 	"[markdown]": {

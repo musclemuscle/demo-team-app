@@ -3,7 +3,6 @@ import type { NextPage } from "next";
 import Link from "next/link";
 import { ChangeEvent, useState } from "react";
 import { useRecoilState } from "recoil";
-import styles from "src/pages/Home.module.css";
 import { userState } from "src/stores/userState";
 import { UserStateProps } from "src/types/stores/userState";
 import { db } from "src/utils/firebase";
@@ -44,8 +43,8 @@ const Home: NextPage = () => {
 	};
 
 	return (
-		<div className={styles.container}>
-			<p>firebase fireStoreのテスト</p>
+		<div>
+			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">firebase fireStoreのテスト</p>
 			<input type="text" value={text} onChange={setLatestText} />
 			<button onClick={submitData}>Submit</button>
 			<p>recoilのテスト</p>
