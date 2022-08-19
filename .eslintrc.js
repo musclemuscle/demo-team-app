@@ -21,7 +21,7 @@ module.exports = {
 		sourceType: "module",
 		project: "./tsconfig.json",
 	},
-	plugins: ["@typescript-eslint", "react"],
+	plugins: ["@typescript-eslint", "react", "tailwindcss"],
 	rules: {
 		// disable the rule for all files
 		"@typescript-eslint/explicit-function-return-type": "off",
@@ -35,5 +35,6 @@ module.exports = {
 			},
 		},
 	],
+	extends: ["plugin:tailwindcss/recommended"],
 	settings: { react: { version: "detect" } },
 };
