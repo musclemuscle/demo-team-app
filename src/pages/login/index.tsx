@@ -26,6 +26,7 @@ const Login: NextPage = () => {
 				setUser((user): UserStateProps => {
 					return {
 						...user,
+						authenticated: true,
 						name: userInfo.displayName,
 						email: userInfo.email,
 						photoUrl: userInfo.photoURL,
@@ -44,11 +45,11 @@ const Login: NextPage = () => {
 	return (
 		<div>
 			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">ログインページ</p>
-			<button onClick={loginWIthGoogle}>google ログイン</button>
-			<p>{user.name}</p>
-			<p>{user.email}</p>
-			<p>{user.photoUrl}</p>
-			<p>{user.uid}</p>
+			{!user.authenticated && <button onClick={loginWIthGoogle}>google ログイン</button>}
+			<p>userName: {user.name}</p>
+			<p>userEmail: {user.email}</p>
+			<p>userPhoto: {user.photoUrl}</p>
+			<p>userUid: {user.uid}</p>
 		</div>
 	);
 };
