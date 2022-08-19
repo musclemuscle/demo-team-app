@@ -14,10 +14,10 @@ const Profile: NextPage = () => {
 	return (
 		<div>
 			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">プロフィールページ</p>
-			<p>{user.name}</p>
-			<p>{user.email}</p>
-			<p>{user.photoUrl}</p>
-			<p>{user.uid}</p>
+			<p>userName: {user.name}</p>
+			<p>userEmail: {user.email}</p>
+			<p>userPhoto: {user.photoUrl}</p>
+			<p>userUid: {user.uid}</p>
 		</div>
 	);
 };
