@@ -18,7 +18,7 @@ const Login: NextPage = () => {
 	const [user, setUser] = useRecoilState<UserStateProps>(userState);
 	const router = useRouter();
 
-	const loginWIthGoogle = useCallback(async (): Promise<void> => {
+	const loginWithGoogle = useCallback(async (): Promise<void> => {
 		const provider = new GoogleAuthProvider();
 		signInWithPopup(authentication, provider)
 			.then((result) => {
@@ -45,7 +45,7 @@ const Login: NextPage = () => {
 	return (
 		<div>
 			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">ログインページ</p>
-			{!user.authenticated && <button onClick={loginWIthGoogle}>google ログイン</button>}
+			{!user.authenticated && <button onClick={loginWithGoogle}>google ログイン</button>}
 			<p>userName: {user.name}</p>
 			<p>userEmail: {user.email}</p>
 			<p>userPhoto: {user.photoUrl}</p>
