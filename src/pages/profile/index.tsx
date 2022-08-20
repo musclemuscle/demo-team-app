@@ -8,7 +8,7 @@
 import { signOut } from "firebase/auth";
 import { NextPage } from "next";
 import { useCallback } from "react";
-import { useRecoilState, useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { userState } from "src/stores/userState";
 import { UserStateProps } from "src/types/stores/userState";
 import { authentication } from "src/utils/firebase";
