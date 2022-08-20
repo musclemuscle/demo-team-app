@@ -33,12 +33,7 @@ yarn dev
 - 本プロジェクトでは、TailWind CSSを利用している。以下のように書くことでスタイリングが可能である。
 
 ```Typescript
-	return (
-		<div>
-			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">firebase fireStoreのテスト</p>
-		</div>
-	);
-
+<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">firebase fireStoreのテスト</p>
 ```
 
 あとは、こちらの[TailWindドキュメント](https://tailwindcss.com/docs/installation)をみてパズルみたいにはめていけばOKです。
