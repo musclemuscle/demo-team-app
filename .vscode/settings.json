@@ -8,7 +8,8 @@
 	"typescript.preferences.importModuleSpecifier": "non-relative",
 	"editor.codeActionsOnSave": {
 		"source.addMissingImports": true, // importの自動追加
-		"source.fixAll.eslint": true
+		"source.fixAll.eslint": true,
+		"source.organizeImports": true // 使っていないimportの自動削除
 	},
 	// tailwindの設定であるといい設定
 	"editor.quickSuggestions": {

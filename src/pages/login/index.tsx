@@ -5,7 +5,7 @@
  * https://chuo-univ-app.web.app/LogInPage
  */
 
-import { signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import { NextPage } from "next";
 import { useRouter } from "next/router";
 import { useCallback } from "react";
