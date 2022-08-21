@@ -14,6 +14,8 @@ import { userState } from "src/stores/userState";
 import { UserStateProps } from "src/types/stores/userState";
 import { authentication } from "src/utils/firebase";
 
+// TODO: ログインした状態でパスを指定すると表示できてしまうので/profileに飛ばすように修正する
+
 const Login: NextPage = () => {
 	const [user, setUser] = useRecoilState<UserStateProps>(userState);
 	const router = useRouter();
@@ -44,7 +46,7 @@ const Login: NextPage = () => {
 
 	return (
 		<div>
-			<p className="bg-sky-700 px-4 py-2 text-white hover:bg-sky-800 sm:px-8 sm:py-3">ログインページ</p>
+			<p>ログインページ</p>
 			{!user.authenticated && <button onClick={loginWithGoogle}>google ログイン</button>}
 			<p>userName: {user.name}</p>
 			<p>userEmail: {user.email}</p>
